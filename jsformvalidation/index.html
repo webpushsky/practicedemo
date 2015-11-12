@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>简单的js表单验证代码</title>
+<!--引入开始-->
+<style>
+.form{width:850px;height:743px;}
+input{margin-top:10px;}
+input img{margin-left:10px;}
+p{width:498px;font-size:12px;line-height:25px;}
+p span{color:#50a7bb;}
+a{font-size:12px;color:#4baaac;}
+.w980{width:700px; margin:0px auto;text-align:left;line-height:40px;font-size:13px}
+.w200{width:200px}
+.w70{width:70px}
+.center{text-align:center}
+</style>
+<!--引入结束-->
+<style>
+body{margin:0; padding:0;}
+ul#wimoban_nav{padding-left:50px; margin-bottom:10px; border-bottom:2px solid #ccc; overflow:hidden; _zoom:1;}
+ul#wimoban_nav li{float:left; display:inline; margin:10px;}
+ul#wimoban_nav li a{display:block; font-size:16px;}
+ul#wimoban_nav li a,#wimoban_p,#wimoban_p a{color:#000; font-family:"微软雅黑";}
+ul#wimoban_nav li a:hover,#wimoban_p a:hover{color:red;}
+#wimoban_p{text-align:center; font-size:14px; clear:both;}
+</style>
+</head>	
+<body>
+<!-- 代码开始 -->
+<div class="w980">
+<form method="post" action="" onsubmit="return check();">
+	*用户名：&nbsp;&nbsp;
+    <input type="text" name="username" id="username" class="w200" />
+    <span id="username_err"></span><br />
+    
+    *密　码：&nbsp;&nbsp;
+    <input type="password" name="password" id="password"  class="w200"/>
+    <span id="pwd_err"></span><br />
+    
+    *确认密码：
+    <input type="password" name="password" id="pwd"  class="w200"/>
+    <span id="repwd_err" ></span><br />
+    
+    *电子邮箱：
+    <input type="text" name="email" id="email"  class="w200"/>	<!--text-->
+    <span id="email_err"></span><br />
+    
+    <!--*验证码：
+    <img src="images/yanzhengma.jpg"> <input type="text" name="username" id="yzm"  class="w70" value="htsA"/>
+    <span id="yzm_err"></span><br />
+    -->
+    
+     *真实姓名：&nbsp;&nbsp;
+     <input type="text" name="username" id="username1" class="w200" />
+     <span id="username1_err"></span><br /> 
+     
+     *身份证号码：
+     <input type="text" name="haoma" id="haoma" class="w200">&nbsp; <span id="haoma_err"></span><br /> 
+     <input type="checkbox" name=""/><a href="#">请查看并同意《注册协议》</a><br />
+     <input type="checkbox" name=""/><a href="#">请查看并同意《服务协议》</a><br />
+     <input type="submit" value="注册登录" />
+</form>
+</div>
+<script>
+function check(){	
+	//return true 会提交	
+	//return false 有错误不会提交	
+	var flag = true;
+
+	//判断用户名
+	var username = document.getElementById('username');
+	if(username.value == ''){
+		//说明用户名未填写
+		document.getElementById('username_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>用户名未填写</span>';
+		flag = false;
+	}else if(username.value.length <6 || username.value.length >15){
+		//长度不符合
+		document.getElementById('username_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>用户名长度应该在6到15位之间</span>';
+		flag = false;
+	}else{
+		//正确
+		document.getElementById('username_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>用户名填写正确,可以注册</span>';
+	}
+
+	//验证第一次输入密码是否为空
+	var password = document.getElementById('password');
+	if(password.value == ''){
+		//密码未填写
+		document.getElementById('pwd_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>密码未填写</span>';	
+		flag = false;
+	}else if(password.value.length <6 || password.value.length >20){
+		//密码长度是否正确
+		document.getElementById("pwd_err").innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>密码长度应该在6到20位之间</span>';	
+		flag = false;
+	}else{
+		//密码未填写
+		document.getElementById('pwd_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>密码填写正确</span>';
+	}
+	
+	//验证
+	var pwd = document.getElementById('pwd');
+	if(pwd.value == ''){
+		//密码未填写
+		document.getElementById('repwd_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>确认密码未填写</span>';	
+		flag = false;
+	}
+	
+	//验证确认密码和密码是否一样	
+	if(password.value != pwd.value){
+		//密码填写不一致
+		document.getElementById('repwd_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>两次输入的密码不一致</span>';	
+		flag = false;
+	}else{
+		if(password.value != '' && pwd.value != ''){
+			document.getElementById('repwd_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>两次输入的密码一致</span>';	
+		}
+	}
+	
+	
+	//电子邮箱校验(本判断只是简单的判断了是否有@符号，更精确的判断电子邮箱的方法请访问：http://www.5imoban.net/jiaocheng/jquery/2014/0310/301.html)
+	var email = document.getElementById('email');
+	//indexOf()返回指定字符串在总字符串位置，如果返回-1，则表示没有该字符串。关于indexOf的具体用法可以访问：http://www.5imoban.net/jiaocheng/jquery/2014/0415/484.html
+	if(email.value == ''){
+		document.getElementById('email_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>email未填写</span>';
+		flag = false;
+	}else if(email.value.indexOf('@') == '-1'){	//不存在,邮件格式错误
+		document.getElementById('email_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>email格式错误</span>';
+		flag = false;
+	}else{
+		document.getElementById('email_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>email格式正确</span>';	
+	}
+	
+	//验证码
+	var  yzm = document.getElementById('yzm');
+	var yzm_value = yzm.value.toUpperCase();	//将字符串变成大写，更多关于js toUpperCase()请查看http://www.5imoban.net/jiaocheng/jquery/2014/0415/485.html
+	if(yzm.value == ''){
+		document.getElementById('yzm_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>验证码未填写</span>';
+		flag = false;
+		//不区分大小写
+		
+	}else if(yzm_value == 'HTSA'){
+		//填写正确
+		document.getElementById('yzm_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>验证码填写正确</span>';
+	}else{
+		document.getElementById('yzm_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>验证码填写错误</span>';
+		flag = false;
+	}
+	
+	//真实姓名
+	var username1 = document.getElementById('username1');
+	if(username1.value == ''){
+		document.getElementById('username1_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>真实姓名未填写</span>';
+		flag = false;	
+	}else{
+		document.getElementById('username1_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>真实姓名以填写</span>';	
+	}
+	
+	//身份证号(这里只是做了简单的判断)
+	var haoma = document.getElementById('haoma');
+	if(haoma.value == ''){
+		document.getElementById('haoma_err').innerHTML = '<img src="images/yuan.jpg">&nbsp;<span>身份证号未填写</span>';
+		flag = false;	
+	}else{
+		document.getElementById('haoma_err').innerHTML = '<img src="images/green.jpg">&nbsp;<span>身份证号以填写</span>';	
+	}
+	if(flag == true){
+		//正确,可以提交
+		return true;	
+	}else{
+		return false;	
+	}
+}
+</script>
+</body>
+</html>

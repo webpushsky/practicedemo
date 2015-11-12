@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动添加</title>
+
+ <head>
+      <script type="text/javascript">
+          function doSomething(){
+              var lab = document.getElementById('messageLabel');
+              arrs=[1,2,3,4,5,6,7,8,9];
+             for(var arr in arrs){
+                 lab.innerHTML+=arr+"<br />"
+             }
+         }
+     </script>
+ </head>
+ <body>
+     <div>
+         <div id="messageLabel"></div>
+        <input type="button" value="Click Here" onClick="doSomething();"/>
+     </div>
+ </body>
+</html>

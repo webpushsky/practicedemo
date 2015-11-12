@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+	<style type="text/css">
+	form{
+		width: 400px;
+	}
+	input{
+		color: #999;
+	}
+	button{
+		margin-left: 20px;
+		right: 0
+	}
+	</style>
+	<script type="text/javascript">
+	function checkname() {
+	var username=$("#name").val();
+    if (username=="") {
+        alert("错误");
+        return;
+    } else {
+        alert("正确");return;
+    }
+}
+	function checksex() {
+	var sex=$("#sex").val();
+    if (sex=="") {
+        alert("错误");
+        return;
+    } else {
+        alert("正确");return;
+    }
+}
+
+	function checkPhone(){
+    var tel = $("#tel").val;
+    if(tel=/^0\d{2,3}-?\d{7,8}$/){
+        alert("正确");
+    }else{
+        alert("错误");
+    }
+}
+</script>
+</head>
+<body>
+	<form>
+		<label>姓名：</label><input id="name" type="text" name="name"  placeholder="请输入中文姓名"><button type="submit" onclick="checkname()">验证</button></br>
+		<label>性别：</label><input id="sex" type="text" name="sex" placeholder="请选择性别"><button  type="submit" onclick="checksex()">验证</button></br>
+		<label>身份证：</label><input id="id" type="text" name="ID" placeholder="请输入身份证"><button>验证</button></br>
+		<label>出生日期：</label><input id="year" type="text" name="year" placeholder="请输入出生日期"><button>验证</button></br>
+		<label>年龄：</label><input id="age" type="text" name="age" placeholder="请输入年龄"><button onclick="isAge()">验证</button></br>
+		<label>电话：</label><select id="tel" placeholder="区号">
+		<option placeholder="">010</option>
+		<option placeholder="">011</option>
+		<option placeholder="">012</option>
+		<option placeholder="">013</option>
+		<option placeholder="">014</option>
+		<option placeholder="">015</option>
+		<option placeholder="">016</option>
+		</select>--<input type="text" name="phone" placeholder="请输入电话"><button onclick="checkPhone()">验证</button></br>
+		<label>手机号：</label><input id="tell" type="text" name="tel" placeholder="请输入手机号"><button onclick="checkMobile()">验证</button></br>
+		<label>QQ：</label><input type="text" name="qq" placeholder="请输入QQ"><button>验证</button></br>
+		<label>邮编：</label><input type="text" name="code" placeholder="请输入邮编"><button>验证</button></br>
+		<label>Email：</label><input type="text" name="Email" placeholder="请输入Email"><button>验证</button></br>
+		<label>星座：</label><input type="text" name="constellation" placeholder="请选择星座"><button>验证</button></br>
+		<label>学历：</label>
+		<select placeholder="学历">
+		<option placeholder="">博士</option>
+		<option placeholder="">硕士</option>
+		<option placeholder="">本科</option>
+		<option placeholder="">大专</option>
+		<option placeholder="">中专</option>
+		<option placeholder="">高中</option>
+		<option placeholder="">其他</option>
+		</select><button>验证</button></br>
+		<label>毕业院校：</label><input type="text" name="graduate" placeholder="请输入毕业院校"><button>验证</button></br>
+		<label>学习经历：</label><input type="text" name="experience" placeholder="请选择学习经历y-y"><button>验证</button></br>
+		<label>职业：</label><input type="text" name="Occupation" placeholder="请输入职业"><button>验证</button></br>
+		<label>爱好：</label><input type="text" name="hobbies" placeholder="请输入爱好"><button>验证</button></br>
+	</form>
+</body>
+</html>

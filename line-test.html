@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>h5细线</title>
+<style>
+ div{position: relative;height: 50px;width: 100%;font-size: 2em;color: #000;line-height: 50px;}
+ p{border-bottom: 1px solid #c8c7cc;}
+div:before {
+  content: ""; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #c8c7cc;
+  -webkit-transform: scaleY(.5);
+}
+.line li{box-shadow: inset 0 -1px 1px #000;background: #fff;margin-left: -1px;margin-bottom: 10px;position: relative;}
+    .line li::after{content:'';position: absolute;top:0;left: 0px;right: 0px;bottom: 0px;border: 1px solid #fff;}
+</style>
+</head>
+
+<body>
+        <div>看!边框是不是变细了? </div>
+        <div>看!边框是不是变细了? </div>
+        <div>看!边框是不是变细了? </div>
+        <p>看!边框是不是变细了? </p>
+        <p>看!边框是不是变细了? </p>
+        <p>看!边框是不是变细了? </p>
+        <ul class="line">
+          <li>linear-gradient</li>
+          <li>linear-gradient</li>
+          <li>linear-gradient</li>
+        </ul>
+        
+</body>
+</html>

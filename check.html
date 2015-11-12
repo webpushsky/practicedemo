@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js表单验证</title>.
+	<style> 
+         span{ font-size:12px; }
+ 
+         .stats1{ color : #ccc; }
+ 
+         .stats2{ color :black; }
+ 
+         .stats3{ color :red; }
+ 
+         .stats4{ color :green; }
+    </style>
+	<script src="check.js" type="text/javascript"></script>
+</head>
+<body>
+
+     <form method="post" action="reg.php" onsubmit="return regs('click')" >
+ 
+         用户名：<input type="text" name="username" /><span class="stats1">用户名不能为空</span><br/>
+ 
+         邮箱：<input type="text" name="email" /><span class="stats1">邮箱不能为空</span><br/>
+ 
+         密码：<input type="password" name="password" /><span class="stats1">密码不能为空</span><br/>
+ 
+         确认密码：<input type="password" name="chkpass" /><span class="stats1">密码不能为空</span><br/>        
+
+         <input type="submit" />
+ 
+     </form>
+
+</body>
+</html>

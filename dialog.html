@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dialog</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.squareui.css" />
+	<script src="js/jquery.js"></script>
+  	<script src="js/jquery.mobile-1.4.0.min.js"></script>
+	</head> 
+<body> 
+
+<!-- First Page -->
+<div data-role="page" id="home" data-theme="d"style="text-align:center">
+	<div data-role="header">
+		<h1>Dialog</h1>
+	</div>
+
+	<div data-role="content">
+		<a href="#terms" data-transition="slidedown">Dialog</a>  	
+	</div>
+</div>
+
+<!-- Second Page/Dialog -->
+<div data-role="dialog" id="terms" data-theme="d"style="text-align:center">
+	<div data-role="header">
+		<h1>Dialog</h1>
+	</div>
+	
+	<div data-role="content" data-theme="d"style="text-align:center">	
+		Do you agree to these terms?
+		<br><br>
+		<a href="#home" data-role="button" data-inline="true" data-rel="back" data-theme="a">Disagree</a>		
+		<a href="javascript:agree();" data-role="button" data-inline="true">Agree</a>
+	</div>
+	<script>
+		function agree() {
+			// process dialog...
+			
+			// close dialog
+			$('.ui-dialog').dialog('close');
+		}
+	</script>
+</div>
+</body>
+</html>
+

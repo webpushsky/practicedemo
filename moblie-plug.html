@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jquery moblie plug</title>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.squareui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0.min.js"></script>
+</head>
+<body>
+  <div data-role="page">
+
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+      <h1>首页</h1>
+      <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+    </div>
+
+    <div data-role="content" role="main">
+      <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><button data-icon="flat-settings" data-theme="a">设置</button></div>
+        <div class="ui-block-b"><button data-icon="flat-new" data-theme="b">编辑</button></div>
+      </fieldset>
+      <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><button data-icon="flat-man" data-theme="c">主页</button></div>
+        <div class="ui-block-b"><button data-icon="flat-mail" data-theme="d">邮件</button></div>
+      </fieldset>
+      <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><button data-icon="flat-lock" data-theme="e">加密</button></div>
+        <div class="ui-block-b"><button data-icon="flat-menu" data-theme="f">列表</button></div>
+      </fieldset>
+      <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><button data-icon="flat-heart" data-theme="g">亲密</button></div>
+      </fieldset>
+
+      <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider" data-theme="e">列表</li>
+        <li data-theme="e">列表</li>
+        <li data-theme="d">
+          <a href="#">
+            <h2>Google Chrome</h2>
+            <p>Google Chrome 是免费的开源 web 浏览器。</p>
+          </a>
+          <a href="#">文本信息</a>
+        </li>
+        <li data-theme="b">
+          <a href="#">
+            <h2>Mozilla Firefox</h2>
+            <p>Firefox 是来自 Mozilla 的 web 浏览器。</p>
+          </a>
+          <a href="#">文本信息</a>
+        </li>
+      </ul>
+
+      <div data-role="collapsible" data-theme="b">
+        <h4>可折叠列表</h4>
+        <ul data-role="listview">
+          <li><a href="#">Adele</a></li>
+          <li><a href="#">Agnes</a></li>
+        </ul>
+      </div>
+
+      <div data-role="collapsible-set" data-theme="d" data-content-theme="d">
+        <div data-role="collapsible" data-collapsed-icon="flat-time" data-expanded-icon="flat-cross" data-collapsed="false">
+          <h3>弹框 1</h3>
+          <p>I'm the collapsible content for section 1</p>
+        </div>
+        <div data-role="collapsible" data-collapsed-icon="flat-calendar" data-expanded-icon="flat-cross">
+          <h3>弹框 2</h3>
+          <p>I'm the collapsible content for section 2</p>
+        </div>
+        <div data-role="collapsible" data-collapsed-icon="flat-settings" data-expanded-icon="flat-cross">
+          <h3>弹框 3</h3>
+          <p>I'm the collapsible content for section 3</p>
+        </div>
+      </div>
+
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-a" data-theme="e" id="radio-choice-1-a" value="choice-1" checked="checked" />
+          <label for="radio-choice-1-a">单选 1</label>
+
+          <input type="radio" name="radio-choice-a" data-theme="f" id="radio-choice-1-b" value="choice-2"  />
+          <label for="radio-choice-1-b">单选 2</label>
+          <input type="checkbox" name="checkbox-a" data-theme="g" id="checkbox-a" checked="checked" />
+          <label for="checkbox-a">复选</label>
+        </fieldset>
+      </div>
+
+      <div data-role="fieldcontain">
+        <a href="#" data-role="button" data-icon="home" data-iconpos="notext" data-theme="a" data-inline="true">Home</a>
+        <a href="#" data-role="button" data-icon="flat-video" data-iconpos="notext" data-theme="b" data-inline="true">Video</a>
+        <a href="#" data-role="button" data-icon="flat-time" data-iconpos="notext" data-theme="c" data-inline="true">Time</a>
+        <a href="#" data-role="button" data-icon="flat-settings" data-iconpos="notext" data-theme="d" data-inline="true">Settings</a>
+        <a href="#" data-role="button" data-icon="flat-plus" data-iconpos="notext" data-theme="e" data-inline="true">Plus</a>
+        <a href="#" data-role="button" data-icon="flat-new" data-iconpos="notext" data-theme="f" data-inline="true">New</a>
+        <a href="#" data-role="button" data-icon="flat-menu" data-iconpos="notext" data-theme="g" data-inline="true">Menu</a>
+        <a href="#" data-role="button" data-icon="flat-man" data-iconpos="notext" data-theme="h" data-inline="true">Man</a>
+        <a href="#" data-role="button" data-icon="flat-mail" data-iconpos="notext" data-theme="a" data-inline="true">Mail</a>
+        <a href="#" data-role="button" data-icon="flat-lock" data-iconpos="notext" data-theme="b" data-inline="true">Lock</a>
+        <a href="#" data-role="button" data-icon="flat-location" data-iconpos="notext" data-theme="c" data-inline="true">Location</a>
+        <a href="#" data-role="button" data-icon="flat-heart" data-iconpos="notext" data-theme="d" data-inline="true">Heart</a>
+        <a href="#" data-role="button" data-icon="flat-eye" data-iconpos="notext" data-theme="e" data-inline="true">Eye</a>
+        <a href="#" data-role="button" data-icon="flat-cross" data-iconpos="notext" data-theme="f" data-inline="true">Cross</a>
+        <a href="#" data-role="button" data-icon="flat-cmd" data-iconpos="notext" data-theme="g" data-inline="true">Cmd</a>
+        <a href="#" data-role="button" data-icon="flat-checkround" data-iconpos="notext" data-theme="h" data-inline="true">Checkround</a>
+        <a href="#" data-role="button" data-icon="flat-calendar" data-iconpos="notext" data-theme="a" data-inline="true">Calendar</a>
+        <a href="#" data-role="button" data-icon="flat-bubble" data-iconpos="notext" data-theme="b" data-inline="true">Bubble</a>
+        <a href="#" data-role="button" data-icon="flat-volume" data-iconpos="notext" data-theme="c" data-inline="true">Volume</a>
+        <a href="#" data-role="button" data-icon="flat-camera" data-iconpos="notext" data-theme="d" data-inline="true">Camera</a>
+      </div>
+
+      <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on" selected>On</option>
+      </select>
+
+      <div data-role="fieldcontain">
+        <div data-role="controlgroup" data-type="horizontal">
+          <a href="#" data-icon="flat-mail" data-theme="e" data-iconpos="notext" data-role="button">Yes</a>
+          <a href="#" data-icon="flat-camera" data-theme="d" data-iconpos="notext" data-role="button">Yes</a>
+          <a href="#" data-icon="flat-heart" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+          <a href="#" data-icon="flat-eye" data-theme="b" data-iconpos="notext" data-role="button">Yes</a>
+        </div>
+      </div>
+
+      <input type="button" value="Button input" data-icon="delete" data-theme="b" data-inline="true" />
+      <a href="#" data-role="button" data-icon="plus" data-theme="b" data-inline="true">Button link</a>
+
+
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-a" data-native-menu="false" data-theme="e">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+
+      <input type="text" placeholder="Text Input" />
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-highlight="true" />
+      </div>
+
+      <form class="ui-filterable">
+        <input id="myFilter" data-type="search" placeholder="搜索..">
+      </form>
+      <ul data-role="listview" data-autodividers="true" data-inset="true" data-theme="b">
+          <li><a href="#">Adele</a></li>
+          <li><a href="#">Agnes</a></li>
+          <li><a href="#">Billy</a></li>
+          <li><a href="#">Bob</a></li>
+          <li><a href="#">Calvin</a></li>
+      </ul>
+
+
+    </div>
+  </div>
+
+  <div id="highlight"> </div>
+</body>
+</html>

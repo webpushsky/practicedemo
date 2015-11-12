@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+	 <script type="application/javascript">
+        var showTime = 2000;   //播放时间
+        var imageArr = ["imgs/001.png","imgs/002.png","imgs/003.png"];   //播放图像
+        var newImage;  //当前正在播放的图像
+
+        setInterval("changImage();",showTime);  //播放计时器
+
+        //图像切换方法
+        function changImage(){
+            var imageid = document.getElementById("myimage");
+            if(newImage != null){
+                for(var i=0;i<imageArr.length;i++){
+                    if(newImage==imageArr[i]){
+                        if(i<2){
+                            newImage = imageArr[i+1];
+                            break;
+                        }else{
+                            newImage = imageArr[0];
+                            break;
+                        }
+                    }
+                }
+            }else{
+                newImage = imageArr[0];
+            }
+            imageid.src = newImage;
+        }
+    </script>
+</head>
+<body>
+<div>
+	<img id="myimage" src="imgs/001.png" width="69px" height="69px"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动端checkbox</title>
+	<style type="text/css">
+	/*字体文件*/
+@font-face {
+  font-family: 'iconfont';
+  /* IE9*/
+  src: url("http://at.alicdn.com/t/font_1433757735_1585197.eot");
+  /* IE6-IE8 */
+  src: url("http://at.alicdn.com/t/font_1433757735_1585197.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_1433757735_1585197.woff") format("woff"), url("http://at.alicdn.com/t/font_1433757735_1585197.ttf") format("truetype"), url("http://at.alicdn.com/t/font_1433757735_1585197.svg#iconfont") format("svg"); }
+	.iconfont {
+	  display: inline-block;
+	  font-family: 'iconfont';
+	  font-style: normal;
+	  text-rendering: auto;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	  -webkit-transform: translate(0, 0);
+	  -ms-transform: translate(0, 0);
+	  transform: translate(0, 0);
+	  -webkit-text-stroke-width: 0.2px; }
+
+	.icon-lg {
+	  font-size: 16px; }
+
+	.icon-2x {
+	  font-size: 24px; }
+
+	.icon-3x {
+	  font-size: 32px; }
+
+	.icon-4x {
+	  font-size: 48px; }
+
+	.icon-5x {
+	  font-size: 64px; }
+
+	.iconfont.ma-left {
+	  margin-left: 3px; }
+
+	.iconfont.ma-right {
+	  margin-right: 3px; }
+
+	.icon-spin {
+	  animation: icon-spin 2s infinite linear; }
+
+	.icon-pulse {
+	  animation: icon-spin 1s infinite steps(8); }
+
+	@-webkit-keyframes icon-spin {
+	  0% {
+	    transform: rotate(0deg); }
+	  100% {
+	    transform: rotate(359deg); } }
+	@keyframes icon-spin {
+	  0% {
+	    transform: rotate(0deg); }
+	  100% {
+	    transform: rotate(359deg); } }
+	.icon-rotate-90 {
+	  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation = 1);
+	  transform: rotate(90deg); }
+
+	.icon-rotate-180 {
+	  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation = 2);
+	  transform: rotate(180deg); }
+
+	.icon-rotate-270 {
+	  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation = 3);
+	  transform: rotate(270deg); }
+
+	.icon-flip-horizontal {
+	  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+	  transform: scale(-1, 1); }
+
+	.icon-flip-vertical {
+	  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+	  transform: scale(1, -1); }
+
+	:root .icon-rotate-90,
+	:root .icon-rotate-180,
+	:root .icon-rotate-270,
+	:root .icon-flip-horizontal,
+	:root .icon-flip-vertical {
+	  filter: none; }
+
+	/*# sourceMappingURL=iconfont.css.map */
+
+	.mui-checkbox {
+	  position: relative;
+	  width: 25px;
+	  height: 22px;
+	  margin-right: 0;
+	  background-color: #FFFFFF;
+	  border: solid 1px #d9d9d9;
+	  border-top-left-radius: 20px;
+	  border-top-right-radius: 20px;
+	  border-bottom-left-radius: 20px;
+	  border-bottom-right-radius: 20px;
+	  background-clip: padding-box;
+	  display: inline-block;
+	  -webkit-appearance: none; }
+  	.mui-checkbox:focus {
+    outline: 0 none;
+    outline-offset: -2px; }
+  	.mui-checkbox:checked {
+    background-color: #18b4ed;
+    border: solid 1px #FFFFFF; }
+    .mui-checkbox:checked:before {
+      display: inline-block;
+      margin-top: 1px;
+      margin-left: 2px;
+      font-family: iconfont;
+      content: "\e667";
+      line-height: 22px;
+      color: #FFFFFF;
+      font-size: 18px; }
+  	.mui-checkbox:disabled {
+    background-color: #d9d9d9;
+    border: solid 1px #d9d9d9; }
+    .mui-checkbox:disabled:before {
+      display: inline-block;
+      margin-top: 1px;
+      margin-left: 2px;
+      font-family: iconfont;
+      content: "\e667";
+      line-height: 22px;
+      color: #FFFFFF;
+      font-size: 18px; }
+  	.mui-checkbox.checkbox-green:checked {
+    background-color: #5cb85c; }
+  	.mui-checkbox.checkbox-orange:checked {
+    background-color: #f0ad4e; }
+  	.mui-checkbox.checkbox-s {
+    width: 19px;
+    height: 19px; }
+    .mui-checkbox.checkbox-s:before {
+      display: inline-block;
+      margin-top: 1px;
+      margin-left: 2px;
+      font-family: iconfont;
+      content: "\e667";
+      line-height: 17px;
+      color: #FFFFFF;
+      font-size: 13px; }
+
+	.mui-checkbox-anim {
+	  transition: background-color ease 0.2s; }
+
+	/*# sourceMappingURL=mui-checkbox.css.map */
+</style>
+</head>
+<body>
+	<div class="mui-checkbox-con">
+  <label>
+    <input class="mui-checkbox" type="checkbox">默认未选中</label>
+</div>
+<div class="mui-checkbox-con">
+  <label>
+    <input class="mui-checkbox" type="checkbox" checked>默认选中</label>
+</div>
+<div class="mui-checkbox-con">
+  <label>
+    <input class="mui-checkbox checkbox-orange" type="checkbox" checked>橘黄色 checkbox-orange</label>
+</div>
+<div class="mui-checkbox-con">
+  <label>
+    <input class="mui-checkbox checkbox-green" type="checkbox" checked>绿色 checkbox-green</label>
+</div>
+<div class="mui-checkbox-con">
+  <label>
+    <input class="mui-checkbox" type="checkbox" disabled>禁用</label>
+</div>
+</body>
+</html>
